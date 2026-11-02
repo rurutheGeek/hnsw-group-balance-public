@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hnswbal"
+version = "0.1.0"
+description = "Group-aware layer balancing for HNSW (code for the NLPIR 2026 paper)"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+]
+
+[project.optional-dependencies]
+text = ["sentence-transformers", "langchain-text-splitters", "datasets"]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
